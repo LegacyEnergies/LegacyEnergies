@@ -19,7 +19,7 @@ export default function Leadership(){
             and long-term alignment with the standards expected of an enterprise-style energy organization.
           </p>
 
-          <SectionHeader title="Executive management" />
+          <SectionHeader kicker="Company" title="Executive management" subtitle="Executive roles supporting strategic direction and operating discipline." />
 
           {/* Top row: 3-up */}
           <div className="grid-3" style={{ marginBottom: 18 }}>
