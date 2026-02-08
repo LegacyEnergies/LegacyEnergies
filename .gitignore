@@ -7,3 +7,10 @@ build/
 .env*
 .vercel
 *.tsbuildinfo
+
+# Ignore heavy local folders
+node_modules/
+.next/
+site_work/node_modules/
+site_work/.next/
+.DS_Store
