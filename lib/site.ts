@@ -41,7 +41,6 @@ export const nav: NavItem[] = [
   },
   {
     label: "Products and services",
-    href: "/trading-supply",
     description: "Crude, refined products, gas, and execution infrastructure.",
     children: [
   {
@@ -61,7 +60,6 @@ export const nav: NavItem[] = [
   },
   {
     label: "Logistics",
-    href: "/trading-supply/infrastructure-logistics",
     description: "Storage, blending, shipping, and delivery governance.",
   },
 ],
@@ -73,12 +71,10 @@ export const nav: NavItem[] = [
     children: [
       {
         label: "Business solutions",
-        href: "/gas",
         description: "Commercial participation across pipeline gas and LPG value chains.",
       },
       {
         label: "Gas products",
-        href: "/gas/products",
         description: "Pipeline gas and LPG across key markets.",
       },
     ],
@@ -251,7 +247,6 @@ export const newsroom: NewsItem[] = [
     date: "2026-02-01",
     excerpt:
       "New ‘Gas’ and ‘Gas products’ pages outline LPG and pipeline natural gas participation, operating controls, and safety-first handling standards.",
-    href: "/newsroom/news/legacy-energies-publishes-updated-gas-and-logistics-pages",
     tags: ["Company update", "Operations"],
   },
   {
@@ -261,7 +256,6 @@ export const newsroom: NewsItem[] = [
     date: "2026-02-01",
     excerpt:
       "Menu structure and mega menus were aligned across About us, Products and services, Gas, and Newsroom to improve clarity and usability.",
-    href: "/newsroom/news/website-navigation-refined-for-consistency",
     tags: ["Digital"],
   },
   {
@@ -271,7 +265,6 @@ export const newsroom: NewsItem[] = [
     date: "2026-02-01",
     excerpt:
       "The Newsroom now separates market commentary (Insights) from formal company communications (Press releases) and operational updates (News).",
-    href: "/newsroom/news/legacy-energies-expands-newsroom-categories",
     tags: ["Communications"],
   },
 
