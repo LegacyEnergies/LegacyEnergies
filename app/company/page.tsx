@@ -10,7 +10,6 @@ export default function Company(){
 	      <PageHero
 	        title="About Legacy Energies"
 	        // Keep the hero clean; the narrative sits in “Our story”.
-	        subtitle={undefined}
 	        backgroundVideo="/hero-about.mp4"
 	      />
 
