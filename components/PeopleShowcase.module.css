@@ -1,0 +1,206 @@
+.wrap {
+  /* CSS Modules disallow global selectors like :root.
+     Keep component tokens scoped so the file compiles in Next.js. */
+  --ink: #0b1b2b;
+  --muted: rgba(11, 27, 43, 0.72);
+  --line: rgba(11, 27, 43, 0.16);
+  --card: rgba(255, 255, 255, 0.86);
+
+  padding: 56px 0;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  /* Slightly tighter + closer to Vitol spacing */
+  grid-template-columns: 260px 480px 1fr;
+  gap: 60px;
+  /* closer to Vitol: larger central portrait column */
+  align-items: center;
+}
+
+.left {
+  align-self: center;
+}
+
+/* Left-side section header */
+.companyHeader {
+  margin: 0 0 18px;
+  /* Lift so it aligns with the section headers above */
+  transform: translateY(-12px);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navItem {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.navItem:focus-visible {
+  outline: 3px solid rgba(11, 27, 43, 0.18);
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+.navItemActive {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.middle {
+  display: flex;
+  /* Keep the portrait naturally left within its column */
+  justify-content: flex-start;
+}
+
+.portraitFrame {
+  position: relative;
+  width: min(420px, 32vw);
+  height: min(520px, 44vw);
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+
+
+.portraitImg {
+  object-fit: contain;
+  object-position: center bottom;
+  /* Very light edge separation for transparent cutouts */
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+  transform-origin: center;
+}
+
+/* Per-panel positioning (align portraits visually across tabs) */
+.portrait_people {
+  /* Nudge left + up, slightly smaller to match Vitol-like balance */
+  transform: translate(-26px, -42px) scale(1.06);
+}
+
+.portrait_esg {
+  /* ESG cutout needed a stronger left/up nudge, but keep size controlled */
+  transform: translate(-56px, -46px) scale(1.10);
+}
+
+.portrait_ethics {
+  /* Match the visual alignment of the other cutouts */
+  transform: translateX(-24px) translateY(-18px) scale(1.02);
+}
+
+.portraitPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 27, 43, 0.45);
+  font-weight: 600;
+}
+
+.right {
+  align-self: center;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 43, 0.55);
+  margin: 0 0 14px;
+}
+
+.heading {
+  margin: 0 0 14px;
+  /* Match the "Company" header sizing (same as global .h2) */
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.body {
+  margin: 0 0 24px;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.ctaArrow {
+  width: 20px;
+  height: 2px;
+  background: #c99b2b;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 240px minmax(240px, 320px) 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 880px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .middle {
+    justify-content: flex-start;
+  }
+  .portraitFrame {
+    max-width: 420px;
+  }
+}
+
+.portraitFrame::before,
+.portraitFrame::after { content: none !important; }
+
+.portraitFrame::before,
+.portraitFrame::after {
+  content: none !important;
+}

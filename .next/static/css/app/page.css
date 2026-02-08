@@ -1,0 +1,506 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./components/hero.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.hero_wrap__rrfDF {
+  position: relative;
+  /* Header is in-flow (non-sticky), pull hero up so it can sit behind the transparent header */
+  margin-top: calc(var(--header-h) * -1);
+  box-sizing: border-box;
+  /* Center hero content vertically and nudge it slightly downward for a balanced fold. */
+  display: flex;
+  align-items: center;
+  padding: clamp(150px, 16vh, 190px) 0 clamp(70px, 10vh, 96px);
+  /* Match exactly one viewport height on desktop, without extending below the fold */
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.92);
+  background: radial-gradient(900px 420px at 24% 32%, rgba(255, 255, 255, 0.08), transparent 60%),
+    radial-gradient(700px 520px at 70% 20%, rgba(255, 187, 0, 0.10), transparent 55%),
+    linear-gradient(180deg, rgba(8, 12, 18, 0.96), rgba(8, 12, 18, 0.92));
+}
+
+/*
+  Keep the home hero copy block stable between slides:
+  - reserve space for a two-line headline
+  - reserve space for a multi-line lead
+  This prevents the buttons/meta from "jumping" as slides rotate.
+*/
+.hero_kickerFixed__2YyEy{ min-height: 1.2em; }
+.hero_titleFixed__vPhEa{ min-height: 2.35em; }
+.hero_leadFixed__MQCCM{ min-height: 3.0em; }
+
+.hero_titleAccent__K8eKm{
+  color: rgba(255, 187, 0, 0.86);
+}
+
+.hero_inner__7HLEl {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-inline: 32px;
+}
+
+/* Background image */
+.hero_wrap__rrfDF::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-image);
+  /* Full-bleed hero (majors-style). */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(1.35) contrast(1.06) saturate(1.04);
+  opacity: 0.72;
+  transform: scale(1.0);
+}
+
+/* When a video background is active, hide the image layer so the video is the source of truth. */
+.hero_hasVideo___YbAR::before {
+  /* Remove the pseudo-element entirely so no image can flash between video swaps. */
+  content: none;
+  opacity: 0;
+}
+
+.hero_videoBg___7Pb5 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* Fill the hero like the previous image slides (no side borders). */
+  object-fit: cover;
+  object-position: center;
+  /* Keep source video quality, no filters. */
+  filter: none;
+  opacity: 0.78;
+  /* No fade/transition between hero slides: play seamlessly back-to-back. */
+  transition: none;
+  z-index: 0;
+}
+
+.hero_videoStack__WF_Rv {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Legacy classes kept for compatibility (no longer used). */
+.hero_videoFadeIn__e84k1 { opacity: 0.78; }
+.hero_videoFadeOut__rrfTS { opacity: 0.78; }
+
+/* Overlay to keep copy readable */
+.hero_wrap__rrfDF::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 9, 14, 0.62) 0%,
+    rgba(5, 9, 14, 0.40) 52%,
+    rgba(5, 9, 14, 0.25) 100%
+  );
+}
+
+.hero_grid__zwhYj {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 28px;
+  gap: 28px;
+  align-items: start;
+  max-width: 860px;
+  /* Minor upward adjustment requested, keep consistent across slides. */
+  transform: translateY(-20px);
+}
+
+/* Tighten spacing so headline → lead reads like slide 1 across all slides. */
+.hero_titleFixed__vPhEa{ margin: 10px 0 8px; }
+.hero_leadFixed__MQCCM{ margin: 0; }
+
+.hero_hl__Wyyhv {
+  color: rgba(255, 187, 0, 0.86);
+}
+
+.hero_actions__euAJz {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero_meta__zb_Gs {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero_dot__SBKKX {
+  width: 4px;
+  height: 4px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero_panel__jNg15 {
+  background: rgba(11, 15, 22, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.30);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.hero_panelTop__fDTs0 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hero_panelTitle__3s2xd {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.hero_panelGrid__FhlAE {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.hero_kpi__YLMSa {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero_kpiLabel__lReWt {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.hero_kpiValue__Yf7ur {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.93);
+}
+
+.hero_kpiNote__UrLkp {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero_panelFoot__2T4gJ {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hero_footLabel__Rpr83 {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.hero_footText__q_NtL {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 980px) {
+  .hero_wrap__rrfDF {
+    padding: 102px 0 66px;
+  }
+  .hero_grid__zwhYj {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile: prefer the static image layer for performance and compatibility. */
+  .hero_videoBg___7Pb5 {
+    display: none;
+  }
+
+  .hero_hasVideo___YbAR::before {
+    opacity: 0.72;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero_wrap__rrfDF::before {
+    transform: none;
+  }
+}
+
+
+.hero_heroControls__bCzFG {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 3;
+}
+
+.hero_heroControl___wQq9 {
+  width: 2px;
+  height: 34px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.35);
+  opacity: 0.7;
+  transition: background 180ms ease-out, opacity 180ms ease-out, transform 180ms ease-out;
+}
+
+.hero_heroControl___wQq9:hover {
+  opacity: 1;
+  transform: scaleX(1.25);
+}
+
+.hero_heroControlActive__3oRz1 {
+  background: var(--accent-color, #f5b623);
+  opacity: 1;
+  transform: scaleX(1.4);
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./components/PeopleShowcase.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.PeopleShowcase_wrap__13svx {
+  /* CSS Modules disallow global selectors like :root.
+     Keep component tokens scoped so the file compiles in Next.js. */
+  --ink: #0b1b2b;
+  --muted: rgba(11, 27, 43, 0.72);
+  --line: rgba(11, 27, 43, 0.16);
+  --card: rgba(255, 255, 255, 0.86);
+
+  padding: 56px 0;
+}
+
+.PeopleShowcase_inner__VHCuW {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  /* Slightly tighter + closer to Vitol spacing */
+  grid-template-columns: 260px 480px 1fr;
+  grid-gap: 60px;
+  gap: 60px;
+  /* closer to Vitol: larger central portrait column */
+  align-items: center;
+}
+
+.PeopleShowcase_left__DqKBr {
+  align-self: center;
+}
+
+/* Left-side section header */
+.PeopleShowcase_companyHeader__HaNIW {
+  margin: 0 0 18px;
+  /* Lift so it aligns with the section headers above */
+  transform: translateY(-12px);
+}
+
+.PeopleShowcase_navList__2oZBp {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.PeopleShowcase_navItem__0C_Xe {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.PeopleShowcase_navItem__0C_Xe:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.PeopleShowcase_navItem__0C_Xe:focus-visible {
+  outline: 3px solid rgba(11, 27, 43, 0.18);
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+.PeopleShowcase_navItemActive__69da1 {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.PeopleShowcase_middle__iQig2 {
+  display: flex;
+  /* Keep the portrait naturally left within its column */
+  justify-content: flex-start;
+}
+
+.PeopleShowcase_portraitFrame__iYac_ {
+  position: relative;
+  width: min(420px, 32vw);
+  height: min(520px, 44vw);
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+
+
+.PeopleShowcase_portraitImg__drquc {
+  object-fit: contain;
+  object-position: center bottom;
+  /* Very light edge separation for transparent cutouts */
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+  transform-origin: center;
+}
+
+/* Per-panel positioning (align portraits visually across tabs) */
+.PeopleShowcase_portrait_people__rHpys {
+  /* Nudge left + up, slightly smaller to match Vitol-like balance */
+  transform: translate(-26px, -42px) scale(1.06);
+}
+
+.PeopleShowcase_portrait_esg__VXvAG {
+  /* ESG cutout needed a stronger left/up nudge, but keep size controlled */
+  transform: translate(-56px, -46px) scale(1.10);
+}
+
+.PeopleShowcase_portrait_ethics__7lKvj {
+  /* Match the visual alignment of the other cutouts */
+  transform: translateX(-24px) translateY(-18px) scale(1.02);
+}
+
+.PeopleShowcase_portraitPlaceholder__eSPts {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11, 27, 43, 0.45);
+  font-weight: 600;
+}
+
+.PeopleShowcase_right__0v0VJ {
+  align-self: center;
+}
+
+.PeopleShowcase_eyebrow__1_dj0 {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 43, 0.55);
+  margin: 0 0 14px;
+}
+
+.PeopleShowcase_heading__zazSw {
+  margin: 0 0 14px;
+  /* Match the "Company" header sizing (same as global .h2) */
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.PeopleShowcase_body__lzNio {
+  margin: 0 0 24px;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.PeopleShowcase_cta__bDq_x {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.PeopleShowcase_cta__bDq_x:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.PeopleShowcase_ctaArrow__zTn4_ {
+  width: 20px;
+  height: 2px;
+  background: #c99b2b;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .PeopleShowcase_inner__VHCuW {
+    grid-template-columns: 240px minmax(240px, 320px) 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 880px) {
+  .PeopleShowcase_inner__VHCuW {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .PeopleShowcase_middle__iQig2 {
+    justify-content: flex-start;
+  }
+  .PeopleShowcase_portraitFrame__iYac_ {
+    max-width: 420px;
+  }
+}
+
+.PeopleShowcase_portraitFrame__iYac_::before,
+.PeopleShowcase_portraitFrame__iYac_::after { content: none !important; }
+
+.PeopleShowcase_portraitFrame__iYac_::before,
+.PeopleShowcase_portraitFrame__iYac_::after {
+  content: none !important;
+}
+

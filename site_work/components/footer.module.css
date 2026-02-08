@@ -1,0 +1,208 @@
+.footer{
+  position: relative;
+  color: rgba(248,250,252,0.92);
+  /* Clean footer (no rotating hero imagery). */
+  background:
+    linear-gradient(180deg, rgba(7,26,47,0.98) 0%, rgba(4,16,31,1) 62%, rgba(2,10,22,1) 100%),
+    radial-gradient(1000px 420px at 18% 18%, rgba(0,0,0,0.00), rgba(0,0,0,0.55));
+  padding: 72px 0 28px;
+  overflow: hidden;
+}
+
+.footer::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 520px at 80% 10%, rgba(245,158,11,0.08), rgba(0,0,0,0)),
+    radial-gradient(740px 420px at 15% 85%, rgba(56,189,248,0.08), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+.container{
+  position: relative;
+}
+
+.top{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.brand{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.logoWrap{
+  /* Keep the clickable area tightly bound to the logo mark only. */
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+  line-height: 0;
+  /* The logo asset contains a bit of built-in left padding.
+     Nudge the whole link so the mark aligns with the text block below. */
+  margin-left: -18px;
+}
+
+.logo{
+  height: 70px;
+  width: auto;
+}
+
+.about{
+  margin: 0;
+  max-width: 520px;
+  color: rgba(248,250,252,0.86);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.hq{
+  font-size: 13px;
+  color: rgba(248,250,252,0.74);
+  margin-top: 2px;
+}
+
+.social{
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.socialLink{
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(248,250,252,0.22);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(248,250,252,0.86);
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.socialLink:hover{
+  transform: translateY(-1px);
+  background-color: rgba(248,250,252,0.08);
+  border-color: rgba(248,250,252,0.32);
+}
+
+.icon{
+  width: 18px;
+  height: 18px;
+}
+
+.cols{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.col{
+  min-width: 0;
+}
+
+.colTitle{
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(248,250,252,0.72);
+  margin-bottom: 10px;
+}
+
+.linkList{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.link{
+  color: rgba(248,250,252,0.86);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: color 140ms ease;
+}
+
+.link:hover{
+  color: #ffffff;
+}
+
+.bottom{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 52px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(248,250,252,0.14);
+}
+
+.copy{
+  font-size: 12px;
+  color: rgba(248,250,252,0.7);
+}
+
+.legal{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.legalLink{
+  font-size: 12px;
+  color: rgba(248,250,252,0.74);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.legalLink:hover{
+  color: rgba(255,255,255,0.95);
+}
+
+.cookieBtn{
+  border: 1px solid rgba(248,250,252,0.22);
+  background: rgba(2,6,23,0.18);
+  color: rgba(248,250,252,0.78);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.cookieBtn:hover{
+  background: rgba(248,250,252,0.08);
+  border-color: rgba(248,250,252,0.32);
+  color: rgba(248,250,252,0.92);
+}
+
+@media (max-width: 920px){
+  .top{
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .cols{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px){
+  .cols{
+    grid-template-columns: 1fr;
+  }
+  .logo{
+    height: 54px;
+  }
+}

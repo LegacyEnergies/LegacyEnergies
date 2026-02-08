@@ -1,0 +1,106 @@
+.wrap{
+  /* Pull the hero under the fixed header so the transparent header overlays it,
+     matching the homepage hero behavior. */
+  margin-top: calc(var(--header-h) * -1);
+  padding: calc(var(--header-h) + 48px) 0 96px;
+  min-height: clamp(520px, 70vh, 760px);
+  background: linear-gradient(135deg, rgba(6,26,58,1) 0%, rgba(2,6,14,1) 68%, rgba(6,26,58,1) 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video heroes: no image layer, no flicker between assets */
+.video::before{
+  display: none;
+}
+
+.bgVideo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: var(--hero-image);
+  background-size: cover;
+  /* Show more of the top of the image so internal-page heroes don't feel "cut". */
+  /* Bias toward the top so header + title area remain visible across hero crops */
+  background-position: center 10%;
+  opacity: 0.34;
+  filter: brightness(1.12) saturate(1.05) contrast(1.06);
+  pointer-events:none;
+}
+
+.wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(2,6,14,0.46) 0%, rgba(2,6,14,0.22) 58%, rgba(2,6,14,0.38) 100%);
+  pointer-events:none;
+}
+
+.kicker{
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(220,226,242,0.85);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.h1{
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.06;
+  margin: 0;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.lead{
+  margin-top: 14px;
+  max-width: 860px;
+  color: rgba(220,226,242,0.86);
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Light variant: matches the subtle neutral used on the homepage "How we operate" band */
+.light {
+  background: #f5f7fb;
+}
+
+.light::before,
+.light::after {
+  display: none;
+}
+
+.light .inner {
+  color: #0b1f33;
+}
+
+.light .kicker {
+  color: #4b5f73;
+}
+
+.light .title {
+  color: #0b1f33;
+}
+
+.light .subtitle {
+  color: #2a3d50;
+}
+
+.light .cta {
+  color: #0b1f33;
+}

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b3a"/>
+      <stop offset="0.7" stop-color="#02060e"/>
+      <stop offset="1" stop-color="#071b3a"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0.2" cy="0.1" r="0.9">
+      <stop offset="0" stop-color="#f4b000" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="h" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="2400" height="1350" fill="url(#g)"/>
+  <rect width="2400" height="1350" fill="url(#r)"/>
+  <rect y="780" width="2400" height="570" fill="#000" opacity="0.45"/>
+
+  <!-- subtle horizon lines -->
+  <path d="M0 780H2400" stroke="url(#h)" stroke-width="2" opacity="0.7"/>
+  <path d="M0 860H2400" stroke="url(#h)" stroke-width="1" opacity="0.5"/>
+
+  <!-- simple refinery/port silhouette -->
+  <g opacity="0.65" fill="#000">
+    <rect x="140" y="650" width="240" height="220" rx="6"/>
+    <rect x="420" y="610" width="140" height="260" rx="6"/>
+    <rect x="585" y="680" width="200" height="190" rx="6"/>
+    <rect x="820" y="600" width="90" height="270" rx="6"/>
+    <rect x="925" y="640" width="190" height="230" rx="6"/>
+    <rect x="1140" y="660" width="120" height="210" rx="6"/>
+    <rect x="1280" y="620" width="70" height="250" rx="6"/>
+    <rect x="1380" y="690" width="260" height="180" rx="6"/>
+    <rect x="1680" y="640" width="90" height="230" rx="6"/>
+    <rect x="1788" y="610" width="160" height="260" rx="6"/>
+    <rect x="1960" y="670" width="220" height="200" rx="6"/>
+    <!-- chimneys -->
+    <rect x="520" y="520" width="40" height="350" rx="10"/>
+    <rect x="1010" y="500" width="38" height="370" rx="10"/>
+    <rect x="1840" y="510" width="38" height="360" rx="10"/>
+  </g>
+
+  <!-- title watermark -->
+  <text x="140" y="230" fill="#ffffff" fill-opacity="0.14" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="64" letter-spacing="8">
+    COMPANY
+  </text>
+</svg>
