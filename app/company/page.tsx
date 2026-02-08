@@ -9,6 +9,7 @@ export default function Company(){
     <main>
 	      <PageHero
 	        title="About Legacy Energies"
+	        subtitle="A logistics-led trading and project platform focused on disciplined execution, risk control, and long-term partnership."
 	        // Keep the hero clean; the narrative sits in “Our story”.
 	        backgroundVideo="/hero-about.mp4"
 	      />
