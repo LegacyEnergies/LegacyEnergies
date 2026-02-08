@@ -82,10 +82,8 @@ export default function ComplianceDocuments() {
     <main>
       <PageHero
         title="Document center"
-        description="Policies and guidance supporting the Ethics and Compliance framework."
-        videoSrc="/hero-home-2.mp4"
-        align="left"
-        size="md"
+        subtitle="Policies and guidance supporting the Ethics and Compliance framework."
+        backgroundVideo="/hero-home-2.mp4"
       />
 
       {/* Spacing: keep the back link comfortably separated from the hero, and keep the last card clear of the footer */}
