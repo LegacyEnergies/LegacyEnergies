@@ -6,6 +6,7 @@ export default function Leadership(){
     <main>
       <PageHero
         title="Leadership"
+        subtitle="Executive management and oversight supporting disciplined execution, risk control, and long-term partnership."
         backgroundVideo="/hero-about.mp4"
       />
 
